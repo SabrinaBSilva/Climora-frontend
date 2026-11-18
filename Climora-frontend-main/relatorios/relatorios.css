@@ -1,0 +1,70 @@
+/* ===== Estilos exclusivos da tela: relatorios ===== */
+
+.item--report .item__desc { color: var(--blue-300); }
+
+.report-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.report-controls label { color: var(--blue-300); font-size: 14px; }
+
+.report-controls select {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--navy-800);
+  color: #fff;
+  font: inherit;
+}
+
+.report-controls button:disabled { cursor: not-allowed; opacity: 0.55; }
+
+.report-message {
+  margin: 8px 0 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--blue-200);
+  background: var(--navy-800);
+}
+
+#erro-relatorios {
+  color: #fecaca;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+.report-section-title {
+  margin: 12px 0 4px;
+  color: var(--blue-200);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.quality-note {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--navy-800);
+}
+
+.quality-note h2 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.quality-note p {
+  color: var(--blue-300);
+  font-size: 14px;
+}
+
+.quality-note .grid--4 { margin: 14px 0; }
+
+@media (max-width: 640px) {
+  .report-controls label { width: 100%; }
+  .report-controls select { flex: 1 1 100%; }
+}
