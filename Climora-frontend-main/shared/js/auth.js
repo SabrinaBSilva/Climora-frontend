@@ -3,7 +3,7 @@
  * A API continua sendo responsável por validar token e permissões.
  */
 const Auth = (() => {
-  const API_BASE_URL = 'https://temperaturapi.onrender.com';
+  const API_BASE_URL = 'https://temperaturapi.onrender.com/api';
   const CHAVE_TOKEN = 'climora:token';
   const CHAVE_USUARIO = 'climora:usuario';
 
