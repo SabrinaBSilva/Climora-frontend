@@ -112,3 +112,6 @@
   border: 1px solid var(--border); border-radius: 8px; background: rgba(245, 158, 11, 0.08);
 }
 .session-notice .demo__link { text-decoration: underline; cursor: pointer; padding: 0; }
+.form__cadastro { margin: 16px 0 0; text-align: center; color: #9db4cf; font-size: .95rem; }
+.form__cadastro { margin: 16px 0 0; text-align: center; color: var(--blue-300); font-size: .95rem; }
+.form__cadastro a { color: var(--gold); text-decoration: none; }
