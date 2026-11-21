@@ -1,5 +1,5 @@
 // Ajuste para a mesma URL que o login.js usa (backend no Render, com https e sem barra no final).
-const API_URL = window.API_URL || 'https://SEU-BACKEND.onrender.com';
+const API_URL = 'https://temperaturapi.onrender.com';
 
 const form = document.getElementById('form');
 const erro = document.getElementById('erro');
