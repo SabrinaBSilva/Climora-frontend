@@ -1,0 +1,28 @@
+/* ===== Estilos exclusivos da tela: dashboard ===== */
+
+.online-badge {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: var(--green);
+}
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 1.6s infinite; }
+.online-badge.is-loading { background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.3); color: var(--gold); }
+.online-badge.is-loading .dot { background: var(--gold); animation: none; }
+.online-badge.is-error { background: rgba(248, 113, 113, 0.12); border-color: rgba(248, 113, 113, 0.3); color: var(--red); }
+.online-badge.is-error .dot { background: var(--red); animation: none; }
+@keyframes pulse { 50% { opacity: 0.3; } }
+.mini-alert {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  background: rgba(15, 34, 54, 0.8);
+  border-left: 3px solid var(--cyan);
+}
+.mini-alert--warning { border-left-color: var(--gold); }
+.mini-alert--success { border-left-color: var(--green); }
+.mini-alert p { color: #dbeafe; line-height: 1.35; }
+.mini-alert small { display: block; color: var(--blue-400); margin-top: 4px; font-size: 12px; }

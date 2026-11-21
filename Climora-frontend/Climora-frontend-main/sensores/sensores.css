@@ -1,0 +1,54 @@
+/* ===== Estilos exclusivos da tela: sensores ===== */
+
+.sensors-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; align-items: start; }
+@media (max-width: 1280px) { .sensors-layout { grid-template-columns: 1fr; } }
+.sensor {
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  border-radius: var(--radius);
+  padding: 16px;
+  background: var(--navy-800);
+  border: 1px solid var(--border);
+  transition: all 0.15s;
+}
+.sensor:hover { border-color: rgba(251, 191, 36, 0.4); }
+.sensor.selected { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.4); }
+.sensor.offline { opacity: 0.5; cursor: not-allowed; }
+.sensor__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.sensor__id { font-size: 14px; font-weight: 600; }
+.sensor__where { font-size: 12px; color: var(--blue-300); }
+.sensor__readings { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; }
+.sensor__last { font-size: 10px; color: var(--blue-500); margin-top: 4px; }
+.sensor__source { font-size: 10px; color: var(--blue-400); margin-top: 8px; }
+.sensor--real { border-left: 3px solid var(--green); }
+.sensor--demo { opacity: 0.8; }
+
+/* ===== Temperatura / umidade: máxima, média e mínima ===== */
+.seg { display: inline-flex; padding: 3px; gap: 2px; border-radius: 10px; background: var(--navy-800); border: 1px solid var(--border); }
+.seg__btn { background: none; border: none; border-radius: 7px; padding: 6px 14px; font-size: 12px; font-weight: 600; color: var(--blue-300); transition: all 0.15s; cursor: pointer; }
+.seg__btn:hover { color: var(--gold); }
+.seg__btn.active { background: var(--gold); color: #0b1929; }
+
+.mm__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.mm__sub { font-size: 12px; color: var(--blue-400); }
+.legend { display: flex; gap: 16px; font-size: 12px; color: var(--blue-300); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 14px; height: 4px; border-radius: 999px; display: inline-block; }
+.mm__kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.kpi {
+  position: relative; overflow: hidden; padding: 10px 14px 10px 16px;
+  border-radius: var(--radius); border: 1px solid var(--border);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--tone) 14%, transparent), transparent 65%), var(--navy-800);
+}
+.kpi::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--tone); }
+.kpi__label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue-300); font-weight: 600; }
+.kpi__value { font-size: 22px; font-weight: 700; color: var(--tone); line-height: 1.2; }
+.kpi__value small { font-size: 12px; font-weight: 500; margin-left: 2px; color: var(--blue-300); }
+.kpi__sub { font-size: 11px; color: var(--blue-400); }
+[data-theme="light"] .kpi__value { filter: brightness(0.7) saturate(1.2); }
+@media (max-width: 640px) { .mm__kpis { grid-template-columns: 1fr; } }
+.sensor-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+.sensor-stats__item { min-width: 0; }
+.sensor-stats__label { color: var(--blue-400); font-size: 10px; }
+.sensor-stats__value { color: var(--blue-100); font-size: 14px; font-weight: 600; }
