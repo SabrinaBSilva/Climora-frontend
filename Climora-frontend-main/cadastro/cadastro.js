@@ -1,4 +1,3 @@
-// Ajuste para a mesma URL que o login.js usa (backend no Render, com https e sem barra no final).
 const API_URL = 'https://temperaturapi.onrender.com';
 
 const form = document.getElementById('form');
@@ -9,15 +8,7 @@ const campoCnpj = document.getElementById('cnpj');
 const digitos = (v) => v.replace(/\D/g, '');
 
 function cnpjValido(valor) {
-  const c = digitos(valor);
-  if (c.length !== 14 || /^(\d)\1{13}$/.test(c)) return false;
-  const dv = (base) => {
-    const pesos = base.length === 12 ? [5,4,3,2,9,8,7,6,5,4,3,2] : [6,5,4,3,2,9,8,7,6,5,4,3,2];
-    const r = base.split('').reduce((s, d, i) => s + Number(d) * pesos[i], 0) % 11;
-    return r < 2 ? 0 : 11 - r;
-  };
-  const d1 = dv(c.slice(0, 12));
-  return c.endsWith(`${d1}${dv(c.slice(0, 12) + d1)}`);
+  return digitos(valor).length === 14;
 }
 
 campoCnpj.addEventListener('input', () => {
